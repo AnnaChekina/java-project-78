@@ -8,15 +8,15 @@ public abstract class BaseSchema<T> {
 
     private final Map<String, Predicate<T>> validations = new HashMap<>();
 
-    protected void addValidation(String key, Predicate<T> validation) {
+    protected final void addValidation(String key, Predicate<T> validation) {
         validations.put(key, validation);
     }
 
-    protected void removeValidation(String key) {
+    protected final void removeValidation(String key) {
         validations.remove(key);
     }
 
-    public boolean isValid(T o) {
+    public final boolean isValid(T o) {
         if (validations.containsKey("required") && o == null) {
             return false;
         }
