@@ -45,13 +45,9 @@ class MapSchemaTest {
         var data = new HashMap<String, String>();
 
         assertFalse(schema.isValid(data));
-
         data.put("key1", "value1");
-
         assertFalse(schema.isValid(data));
-
         data.put("key2", "value2");
-
         assertTrue(schema.isValid(data));
     }
 
@@ -64,13 +60,9 @@ class MapSchemaTest {
 
         assertFalse(schema.isValid(null));
         assertFalse(schema.isValid(data));
-
         data.put("key1", "value1");
-
         assertFalse(schema.isValid(data));
-
         data.put("key2", "value2");
-
         assertTrue(schema.isValid(data));
     }
 

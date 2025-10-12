@@ -12,10 +12,6 @@ public abstract class BaseSchema<T> {
         validations.put(key, validation);
     }
 
-    protected final void removeValidation(String key) {
-        validations.remove(key);
-    }
-
     public final boolean isValid(T o) {
         if (validations.containsKey("required") && o == null) {
             return false;

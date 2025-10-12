@@ -11,13 +11,11 @@ public final class MapSchema extends BaseSchema<Map<?, ?>> {
     }
 
     public MapSchema sizeof(int size) {
-        removeValidation("sizeof");
         addValidation("sizeof", s -> s.size() == size);
         return this;
     }
 
     public <T> MapSchema shape(Map<String, BaseSchema<T>> schemas) {
-        removeValidation("shape");
         addValidation(
                 "shape",
                 map -> {
